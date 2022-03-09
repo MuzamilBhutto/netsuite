@@ -1,0 +1,162 @@
+<?xml version="1.0"?>
+<!DOCTYPE pdf PUBLIC "-//big.faceless.org//report" "report-1.1.dtd">
+<pdf>
+    <head>
+        <style>
+            #mainparagraph
+            {
+                color:red
+            }
+
+            .redtext
+            {
+                color:red
+            }
+
+        </style>
+    </head>
+    <body>
+
+        <p id="mainparagraph"> This is in red </p>
+
+        <h1 class="redtext"> This heading is red </h1>
+
+        <p>This text is in <o>outline</o> and this is <u>underlined</u></p>
+        <p>This text is <tt>monospaced</tt></p>
+        <p>These are the four suits. <zapf>&hearts; &diamonds; &clubs; &spades; </zapf>.</p>
+        <p>The Greek alphabet begins with <symbol>&alpha;, &beta;, and &gamma;</symbol>.</p>
+        <p>Einstein insists that E=MC<sup>2</sup></p>
+        <p>Remember that H<sub>2</sub>O is safe to drink, while H<sub>2</sub>SO<sub>4</sub> is not</p>
+        <p>This text is in <b>bold</b> and this is in <i>italic</i></p>
+        <p>This text is <strikeout>struck out</strikeout> and this is <u>underlined</u></p>
+        <span font-family="Helvetica" font-style="italic outline">
+            This is in outlined Helvetica Italic
+        </span>
+        <p>This text is <big>bigger</big> and this text is <small>smaller</small></p>
+        <p>This text is in <o>outline</o> and this is <u>underlined</u></p>
+        <p>These words will <nobr>not be broken at the end of the line</nobr></p>
+        <p>This text is in <b>bold</b> and this is in <i>italic</i></p>
+        <p>
+            This is the first line<br/>
+            This is the second line<br/><br/>
+            That was a blank line
+        </p>
+
+        <h1>This is the heading</h1>
+        <h2>This is the sub-heading</h2>
+        <p>This is the content</p>
+
+
+        <p>Here is a preformatted block of text.</p>
+        <pre>
+            public class HelloWorld {
+            public static void main(String[] args) {
+            System.out.println("Hello World");
+            }
+            }
+        </pre>
+
+
+        <ol>
+            <li>Element 3</li>
+            <li>Element 4</li>
+            <li>Element 5</li>
+        </ol>
+
+        <ol start="3" marker-type="decimal">
+            <li>Element 3</li>
+            <li>Element 4</li>
+            <li>Element 5</li>
+        </ol>
+
+        <ul marker-type="disc">
+            <li>Element 1</li>
+            <li>Element 2</li>
+            <li>Element 3</li>
+        </ul>
+
+
+
+
+        <h1 id="chapter1">Chapter 1</h1>
+        <p> Contents of chapter 1 here </p>
+
+        <a href="#chapter1">Jump to Chapter 1</a>  <br/>
+
+
+
+
+
+
+
+
+
+
+        <p>
+            This text is broken in
+            <img display="inline" src="file:/path/to/image.jpg"/>
+            two by an image
+        </p>
+
+        <div class="redtext" width="200" height="200">
+            <circle x="50%" y="50%" radius="40%" border="1"/>
+        </div>
+
+
+
+
+        <img src="myimage.jpg"/>                           <!-- embed at images default resolution -->
+        <img src="myimage.jpg" dpi="200"/>                 <!-- embed at 200dpi -->
+        <img src="myimage.jpg" width="150" height="100"/>  <!-- embed at a specified size -->
+
+        <shape width="100" height="100">
+            <shapepath>
+                <moveto x="20" y="20"/>
+                <bezierto cx1="70" cy1="30" cx2="30" cy2="70" x="80" y="80"/>
+            </shapepath>
+        </shape>
+
+
+
+
+        <h1  align="center" font-family="Times, Symbol">This is heading</h1>
+        <hr/>
+        <input type="checkbox" name="box1" checked="true"/>
+
+
+
+        <table table-layout="fixed" width="100%" border="1">
+            <thead>
+                <tr Cellborder="1"  background-color="#CCCCCC">
+                    <th colspan="2" align="center" font-family="Times, Symbol">Field Value of Customer</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr  background-color="Orange">
+                    <td border="1"> Name: </td>
+                    <td border="1"> ${customer.entityid} </td>
+                </tr>
+
+                <tr background-color="Green">
+                    <td border="1"> Email: </td>
+                    <td border="1"> ${customer.email} </td>
+                </tr>
+
+                <tr background-color="Blue">
+                    <td border="1"> Company Name: </td>
+                    <td border="1"> ${customer.companyname} </td>
+                </tr>
+
+                <tr background-color="Red">
+                    <td border="1">Status</td>
+                    <td border="1">${customer.entitystatus}</td>
+                </tr>
+
+
+
+
+
+            </tbody>
+        </table>
+    </body>
+</pdf>

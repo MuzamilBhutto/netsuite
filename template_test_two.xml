@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<!DOCTYPE pdf PUBLIC "-//big.faceless.org//report" "report-1.1.dtd">
+<pdf>
+    <head>
+        <style>
+            #mainparagraph
+            {
+            color:red
+            }
+
+            .redtext
+            {
+            color:red
+            }
+
+        </style>
+    </head>
+    <body width="5in" height="5in" padding="0.1in 0.1in 0.1in 0.1in" >
+        <div width="100%" height="100%" background-color="white">
+
+            <div id="firstcolumn" position="absolute" background-color="red"
+                 x="0%" height="100%" width="33%">
+                <p>
+                    hello
+                    <br/>
+                    hello
+                </p>
+            </div>
+            <div id="secondcolumn" position="absolute" background-color="green"
+                 x="33%" height="100%" width="33%">
+                <p>
+                    hello
+                    <br/>
+                    hello
+                </p>
+            </div>
+
+            <div id="thirdcolumn" position="absolute" background-color="blue"
+                 x="67%" height="100%" width="33%"/>
+            <p>
+                Hello
+                <br/>
+                World
+            </p>
+
+            <p align="right">
+                A paragraph at the right of the page
+            </p>
+
+
+            <p text-align="left" align="right">
+                A paragraph at the right of the page, but with left-aligned text
+            </p>
+
+            <div height="100" width="100">
+                <div height="40" width="40" align="right" vertical-align="bottom"/>
+            <p>Hello</p>
+            </div>
+
+            <p>
+            <span font-size="24pt">
+                This text is large
+            </span>
+            <span font-size="12pt" vertical-align="top">
+                This text is smaller and top-aligned
+            </span>
+        </p>
+
+            <p text-align="right">Right aligned text in a left-aligned block</p>
+            <br/>
+            <p align="right" text-align="left">Left aligned text in a right-aligned block</p>
+
+
+
+
+        </div>
+    </body>
+</pdf>

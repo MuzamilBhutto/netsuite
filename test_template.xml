@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<!DOCTYPE pdf PUBLIC "-//big.faceless.org//report" "report-1.1.dtd">
+<pdf>
+    <head>
+        <style>
+        </style>
+    </head>
+    <body>
+        <table border="1px" colspan="2" width="100%">
+            <thead>
+                <tr border="1px">
+                    <th align="center" ><h4>Field</h4></th>
+                    <th align="center"><h4>Value</h4></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr border="1px">
+                    <td align="center" > ID</td>
+                    <td align="center" > ${customer.internalid}</td>
+                </tr>
+
+                <tr border="1px">
+                    <td align="center" >Name</td>
+                    <td align="center" >${customer.entityid}</td>
+                </tr>
+
+                <tr border="1px">
+                    <td align="center" >Company Name</td>
+                    <td align="center" >${customer.companyname}</td>
+                </tr>
+
+                <tr border="1px">
+                    <td align="center" >Status</td>
+                    <td align="center" >${customer.entitystatus}</td>
+                </tr>
+
+                <tr border="1px">
+                    <td align="center" >Phone</td>
+                    <td align="center" >${customer.phone}</td>
+                </tr>
+
+                <tr border="1px">
+                    <td align="center" >Email</td>
+                    <td align="center" >${customer.email}</td>
+                </tr>
+
+                <tr border="1px">
+                    <td align="center"> Document Retention</td>
+                    <td align="center" >${customer.custentity52}</td>
+                </tr>
+
+
+
+            </tbody>
+        </table>
+
+
+
+
+
+
+
+    </body>
+</pdf>
