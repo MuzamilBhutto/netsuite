@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<!DOCTYPE pdf PUBLIC "-//big.faceless.org//report" "report-1.1.dtd">
+<pdf>
+    <head>
+        <style>
+        </style>
+    </head>
+    <body>
+        <table border="1px" colspan="2" width="100%">
+            <thead>
+                <tr  padding="5pt 5pt" background-color="Red" border="1px">
+                    <th  border="1px" align="center" ><h4>Field</h4></th>
+                    <th  border="1px" align="center"><h4>Value</h4></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr border="1px">
+                    <td border="1px" align="left" > ID</td>
+                    <td border="1px" align="left" > ${customer.internalid}</td>
+                </tr>
+
+                <tr border="1px">
+                    <td border="1px" align="left" >Name</td>
+                    <td border="1px" align="left" >${customer.entityid}</td>
+                </tr>
+
+                <tr border="1px">
+                    <td border="1px" align="left" >Company Name</td>
+                    <td border="1px" align="left" >${customer.companyname}</td>
+                </tr>
+
+                <tr border="1px">
+                    <td border="1px" align="left" >Status</td>
+                    <td border="1px" align="left" >${customer.entitystatus}</td>
+                </tr>
+
+                <tr borsder="1px">
+                    <td border="1px" align="left" >Phone</td>
+                    <td border="1px" align="left" >${customer.phone}</td>
+                </tr>
+
+                <tr border="1px">
+                    <td border="1px" align="left" >Email</td>
+                    <td border="1px" align="left" >${customer.email}</td>
+                </tr>
+
+                <tr border="1px">
+                    <td border="1px" align="left"> Fax</td>
+                    <td border="1px" align="left">${customer.fax}</td>
+                </tr>
+
+                <tr border="1px">
+                    <td border="1px" align="left"> Documents Retention</td>
+                    <td border="1px" align="left" >${customer.custentity52}</td>
+                </tr>
+
+
+                <tr border="1px">
+                    <td border="1px" align="left">Trust Sales Types</td>
+                    <td border="1px" align="left">${customer.custentity6_2}</td>
+                </tr>
+
+
+            </tbody>
+        </table>
+
+
+
+
+
+
+
+    </body>
+</pdf>

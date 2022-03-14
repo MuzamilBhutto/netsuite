@@ -34,7 +34,7 @@
                     <td align="center" >${customer.entitystatus}</td>
                 </tr>
 
-                <tr border="1px">
+                <tr borsder="1px">
                     <td align="center" >Phone</td>
                     <td align="center" >${customer.phone}</td>
                 </tr>
@@ -45,7 +45,7 @@
                 </tr>
 
                 <tr border="1px">
-                    <td align="center"> Document Retention</td>
+                    <td align="center"> Documents Retention</td>
                     <td align="center" >${customer.custentity52}</td>
                 </tr>
 
