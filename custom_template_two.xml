@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<!DOCTYPE pdf PUBLIC "-//big.faceless.org//report" "report-1.1.dtd">
+<pdf>
+    <head>
+        <style>
+        </style>
+    </head>
+    <body>
+        <#if person?has_content>
+        <table border="1px" colspan="2" width="100%">
+            <thead>
+                <tr border="1px">
+                    <th align="center" border="1px"> <h4>Field</h4></th>
+                    <th align="center" border="1px"><h4>Value</h4></th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <#if person.name?has_content>
+                <tr border="1px">
+                    <td align="left" border="1px">Name</td>
+                    <td align="left" border="1px">${person.name}</td>
+                </tr>
+                </#if>
+
+                <#if person.lastName?has_content>
+                <tr border="1px">
+                    <td align="left" border="1px">Last Name</td>
+                    <td align="left" border="1px">${person.lastName}</td>
+                </tr>
+                </#if>
+
+                <#if person.phone?has_content>
+                <tr border="1px">
+                    <td align="left" border="1px">Phone</td>
+                    <td align="left" border="1px">${person.phone}</td>
+                </tr>
+                </#if>
+
+                <#if person.address.city?has_content>
+                <tr border="1px">
+                    <td align="left" border="1px">city</td>
+                    <td align="left" border="1px">${person.address.city}</td>
+                </tr>
+                </#if>
+
+                <#if person.address.state?has_content>
+                <tr border="1px">
+                <td align="left" border="1px">State</td>
+                <td align="left" border="1px">${person.address.state}</td>
+                </tr>
+                </#if>
+
+                <#if person.address.country?has_content>
+                <tr border="1px">
+                    <td align="left" border="1px">Country</td>
+                    <td align="left" border="1px">${person.address.country}</td>
+                </tr>
+                </#if>
+
+
+
+
+
+            </tbody>
+        </table>
+    </#if>
+
+    </body>
+</pdf>

@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<!DOCTYPE pdf PUBLIC "-//big.faceless.org//report" "report-1.1.dtd">
+<pdf>
+    <head>
+        <macrolist>
+            <macro id="nlfooter"></macro>
+        </macrolist>
+        <style>
+            .page { margin-right: 1.5cm; width: 21cm; min-height: 29.7cm; }
+        </style>
+        <bookmarklist>
+            <bookmark name="Page 1" href="#page1"/>
+            <bookmark name="Page 2" href="#page2"/>
+            <bookmark name="Page 3" href="#page3"/>
+        </bookmarklist>
+    </head>
+
+        <body footer="nlfooter" footer-height="15%">
+
+        <#if data?has_content>
+            <#if data.persons?has_content>
+
+                    <#list data.persons as person>
+                    <div class="page" id="page1">
+                        <table border="1px" width="100%">
+                            <thead>
+                                <tr border="1px">
+                                    <th align="center" border="1px"><h4>Field</h4></th>
+                                    <th align="center" border="1px"><h4>Value</h4></th>
+                                </tr>
+                            </thead>
+                             <tbody>
+                                <tr border="1px">
+                                    <td align="left" border="1px">Name</td>
+                                    <td align="left" border="1px">${person.name}</td>
+                                </tr>
+
+                                <tr border="1px">
+                                    <td align="left" border="1px">Last Name</td>
+                                    <td align="left" border="1px">${person.lastName}</td>
+                                </tr>
+
+                                <tr border="1px">
+                                    <td align="left" border="1px">Phone</td>
+                                    <td align="left" border="1px">${person.phone}</td>
+                                </tr>
+
+                                <tr border="1px">
+                                    <td align="left" border="1px">City</td>
+                                    <td align="left" border="1px">${person.address.city}</td>
+                                </tr>
+
+                                <tr border="1px">
+                                    <td align="left" border="1px">State</td>
+                                    <td align="left" border="1px">${person.address.state}</td>
+                                </tr>
+
+                                <tr border="1px">
+                                    <td align="left" border="1px">Country</td>
+                                    <td align="left" border="1px">${person.address.country}</td>
+                                </tr>
+                             </tbody>
+                        </table>
+                    </div>
+                </#list>
+            </#if>
+        <#else>
+        data is empty
+        </#if>
+
+    </body>
+    </pdf>
