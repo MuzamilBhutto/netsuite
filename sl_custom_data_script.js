@@ -17,63 +17,79 @@ define(['N/file', 'N/record', 'N/render'],
          * @since 2015.2
          */
         const onRequest = (scriptContext) => {
-        }
 
-        try {
+            try {
 
-            // 2. create reference for request & response
+                // 2. create reference for request & response
 
-            let request  = scriptContext.request  ;
-            let response = scriptContext.response ;
+                let request  = scriptContext.request  ;
+                let response = scriptContext.response ;
 
-            // 3. request method check
+                // 3. request method check
 
-            if(request.method === 'GET')
-            {
-                // 4. load template from file cabinet using internal ID
+                if(request.method === 'GET')
+                {
+                    // 4. load template from file cabinet using internal ID
 
-                let template_file = file.load({
-                    id :2329690
-                });
+                    let template_file = file.load({
+                        id :2329384
+                    });
 
-                // 5. create renderer
+                    // 5. create renderer
 
-                let renderer = render.create();
+                    let renderer = render.create();
 
-                // 6. set template for renderer
+                    // 6. set template for renderer
 
-                renderer.templateContent = template_file.getContents();
+                    renderer.templateContent = template_file.getContents();
 
-                // 7. load the record
+                    // 7. load the record
 
-                let person ;
-                let persons = [] ;
+                    let person ;
+                    let persons = [] ;
 
-                person = {
-                    name : 'Muzamil',
-                    lastName : 'Yasin',
-                    phone : 123123,
-                    address : {
-                        city : 'Hyderabad',
-                        state : 'Sindh',
-                        country : 'Pakistan'
+                    person = {
+                        name : 'Muzamil',
+                        lastName : 'Yasin',
+                        phone : '0333123456',
+                        address : {
+                            city : 'Hyderabad',
+                            state : 'Sindh',
+                            country : 'Pakistan'
+                        }
+
+                    };
+
+                    persons.push(person);
+
+                    person = {
+                        name : 'Talha',
+                        lastName : 'Ahmed',
+                        phone : '0333123456',
+                        address : {
+                            city : 'Lahore',
+                            state : 'Punjab',
+                            country : 'Pakistan'
+                        }
+                    } ;
+                    persons.push(person);
+
+                    person = {
+                        name : 'Ahmed',
+                        lastName : 'Talha',
+                        phone : '0333123456',
+                        address : {
+                            city : 'Karachi',
+                            state : 'Sindh',
+                            country : 'Country'
+                        }
+                    };
+                    persons.push(person);
+
+                    let data = {
+                        persons : persons
                     }
 
-                } ;
-
-                persons.push(person);
-
-                person = {
-                    name : 'Tom',
-                    lastName : 'Ben',
-                    phone : 12345,
-                    address : {
-                        city : 'Lahore',
-                        state : 'Punjab',
-                        country : 'Pakistan'
-                    }
-                } ;
-                persons.push(person);
 
 
 
@@ -82,40 +98,43 @@ define(['N/file', 'N/record', 'N/render'],
 
 
 
+                    // 8. Set Record and Record name in the template
 
-                // 8. Set Record and Record name in the template
+                    renderer.addCustomDataSource({
+                        format: render.DataSource.JSON,
+                        data : JSON.stringify(data),
+                        alias : 'data'
+                    });
 
-                renderer.addCustomDataSource({
-                    format: render.DataSource.JSON,
-                    data : JSON.stringify(person),
-                    alias : 'person'
-                });
+                    // 9. set template type for renderer
 
-                // 9. set template type for renderer
+                    let template_pdf = renderer.renderAsPdf();
 
-                let template_pdf = renderer.renderAsPdf();
+                    // 10. write rendered contents in response
 
-                // 10. write rendered contents in response
+                    response.writeFile({
+                        file : template_pdf,
+                        isInline: true
+                    });
 
-                response.writeFile({
-                    file : template_pdf,
-                    isInline: true
-                });
+                }
+                else if(request.method === 'POST')
+                {
+                }
+
+
 
             }
-            else if(request.method === 'POST')
-            {
-            }
-
-
+            catch (e) {
+                log.error({
+                    title: 'Error',
+                    details: e
+                });
+            };
 
         }
-        catch (e) {
-            log.error({
-                title: 'Error',
-                details: e
-            });
-        };
+
+
 
         return {onRequest}
 
